@@ -112,7 +112,13 @@ then
     } | bash -s 3G
     exit 0
   fi
-  rm "$marker"
+
+  # Spartan1776 mod
+  if [ -f "$marker" ]
+  then
+  	rm "$marker"
+  fi
+  
   # shrink root partition to match root file system size
   echo "shrinking root partition to match root fs, $fsnumsectors sectors"
   sleep 3
